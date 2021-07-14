@@ -25,9 +25,9 @@ public class Controller {
 		return peopleDB;
 	}
 	
-	@DeleteMapping("/deletePerson/{id}")
-	public Map<Integer,Model> deletePerson(@PathVariable int id){
-		
+	@DeleteMapping("/deletePerson")
+	public Map<Integer,Model> deletePerson(@RequestParam int id){
+		System.out.println(id);
 		if(peopleDB.containsKey(id)){
 			peopleDB.remove(id);
 			count--;
